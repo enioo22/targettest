@@ -1,27 +1,11 @@
-continuar = True
-fib = []
-fib.append(0)
-fib.append(1)
+numero = 10946 #MUDE AQUI O NUMERO A SER PROCURADO
+fib = 0
+fib_atual = 1
 
-entrada = 10946 # MUDE AQUI O VALOR A SER PROCURADO
 
-if( entrada in fib ):
-    print(True)
+while(numero > fib_atual):
+    holder = fib_atual
+    fib_atual = fib+fib_atual
+    fib = holder
 
-else:
-    while continuar:
-        if(len(fib) == 2):
-            fib.append(fib[0] + fib[1])
-        
-        else:
-            fib[0] = fib[1]
-            fib[1] = fib[2]
-            fib[2] = fib[0] + fib[1]
-            print(fib[2])
-            if(fib[2] >= entrada):
-                continuar = False
-
-    if(entrada == fib[2]):
-        print(True)
-    else:
-        print(False)
+print(str(numero) + " pertence a sequência") if numero == fib_atual else print(str(numero) + " não pertence a sequência")
